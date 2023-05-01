@@ -6,7 +6,7 @@ typedef uint32_t i32;
 
 using namespace std;
 
-// functions
+// function declarations
 vector<i32> compileToInstructions(strings s);
 bool isInteger(string s);
 bool isPrimimitive(string s);
@@ -66,6 +66,7 @@ vector<i32> compileToInstructions(strings s) {
 	}
 	return instructions;
 }
+
 bool isInteger(string s) {
 	for (i32 i = 0; i < s.length(); i++) {
 		if (!isdigit(s[i])) {
@@ -74,6 +75,7 @@ bool isInteger(string s) {
 	}
 	return true;
 }
+
 i32 mapToNumber(string s) {
 	if (s == "+") {
 		return 0x40000001;
