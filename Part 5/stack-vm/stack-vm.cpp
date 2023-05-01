@@ -12,27 +12,37 @@
  * 3 => undefined
  * */
 
-// functions
+// Constructor initializes memory vector to reserve space
 StackVM::StackVM() {
 	memory.reserve(1000000);
 }
+
+// Returns instruction type (first two bits of instruction)
 i32 StackVM::getType(i32 instruction) {
 	i32 type = 0xc0000000;
 	type = (type & instruction) >> 30;
 	return type;
 }
+
+// Returns instruction data (last 30 bits of instruction)
 i32 StackVM::getData(i32 instruction) {
 	i32 data = 0x3fffffff;
 	data = data & instruction;
 	return data;
 }
+
+// Fetches the next instruction from memory
 void StackVM::fetch() {
 	pc++;
 }
+
+// Decodes the current instruction
 void StackVM::decode() {
 	typ = getType(memory[pc]);
 	dat = getData(memory[pc]);
 }
+
+// Executes the current instruction
 void StackVM::execute() {
 	if (typ == 0 || typ == 2) {
 		sp++;
@@ -41,6 +51,8 @@ void StackVM::execute() {
 		doPrimitive();
 	}
 }
+
+// Executes a primitive instruction
 void StackVM::doPrimitive() {
 	switch (dat) {
 		case 0: // halt
@@ -70,6 +82,8 @@ void StackVM::doPrimitive() {
 			break;
 	}
 }
+
+// Runs the program by repeatedly fetching, decoding, and executing instructions
 void StackVM::run() {
 	pc -= 1;
 	while (running == 1) {
@@ -79,6 +93,8 @@ void StackVM::run() {
 		std::cout << "tos: " << memory[sp] << std::endl;
 	}
 }
+
+// Loads a program into memory starting at the current program counter
 void StackVM::loadProgram(std::vector<i32> prog) {
 	for (i32 i = 0; i < prog.size(); i++) {
 		memory[pc + i] = prog[i];
