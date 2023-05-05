@@ -26,13 +26,6 @@ To run the virtual machine, use the following command:
 
 Replace `<filename>` with the name of the file containing bytecode instructions. The virtual machine will read in the instructions, execute them, and print the result.
 
-## File Format
-
-The bytecode file should contain one instruction per line, with each instruction consisting of an opcode and zero or more operands. The format of the file is as follows:
-
-<opcode> <operand1> <operand2> ...
-
-
 The supported opcodes and operands are:
 
 - `push <value>`: Pushes a value onto the stack.
@@ -43,16 +36,3 @@ The supported opcodes and operands are:
 - `mod`: Pops the top two values off the stack, computes the remainder, and pushes the result onto the stack.
 - `pop`: Pops the top value off the stack and discards it.
 - `print`: Prints the top value on the stack.
-
-## Example
-
-Here is an example of a bytecode file that adds two numbers:
-
-push 2
-push 3
-add
-print
-
-
-When this file is executed by the virtual machine, it will push the values 2 and 3 onto the stack, add them, and print the result:
-
