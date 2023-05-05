@@ -28,7 +28,7 @@ Replace `<filename>` with the name of the file containing bytecode instructions.
 
 The supported opcodes and operands are:
 
-- `push <value>`: Pushes a value onto the stack.
+- `push`: Pushes a value onto the stack.
 - `add`: Pops the top two values off the stack, adds them, and pushes the result onto the stack.
 - `sub`: Pops the top two values off the stack, subtracts them, and pushes the result onto the stack.
 - `mul`: Pops the top two values off the stack, multiplies them, and pushes the result onto the stack.
