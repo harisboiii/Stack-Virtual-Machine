@@ -1,6 +1,6 @@
 # Stack-Based Virtual Machine
 
-This project provides an example of building a simple stack-based virtual machine from scratch using C++. The virtual machine reads in a file containing bytecode instructions and executes them, using a stack to store intermediate results.
+The project was a success in achieving its objective of building a simple stack-based virtual machine from scratch using C++. The virtual machine was able to execute bytecode instructions and perform operations on operands using a stack data structure. Additionally, the virtual machine was able to handle flow control, function calls, and memory management. The project also resulted in the creation of user and developer documentation to assist users and developers in understanding how to use and modify the virtual machine. Overall, this project provided valuable learning experience in building a virtual machine and understanding its underlying concepts.
 
 ## Prerequisites
 
