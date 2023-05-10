@@ -13,7 +13,7 @@ typedef int32_t i32;
 class StackVM {
 // Private member variables
 i32 pc = 100; // program counter
-i32 sp = 0; // stack pointer
+i32 sp = 0; // stack pointer                    //CREATING REGISTERS FOR OUR VIRUAL MACHINE
 std::vector<i32> memory; // memory array
 i32 typ = 0; // instruction type
 i32 dat = 0; // instruction data
